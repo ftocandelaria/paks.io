@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* ===== Base Styles ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -30,7 +33,10 @@
             color: inherit;
         }
 
-        /* Small helper text under section titles */
+        .center {
+            text-align: center;
+        }
+
         .section-subtitle {
             text-align: center;
             max-width: 750px;
@@ -38,7 +44,6 @@
             color: #4b5563;
         }
 
-        /* ===== Navbar ===== */
         nav {
             display: flex;
             justify-content: space-between;
@@ -48,7 +53,6 @@
             position: sticky;
             top: 0;
             border-bottom: 1px solid #e5e7eb;
-            z-index: 10;
         }
 
         nav ul {
@@ -64,12 +68,10 @@
         }
 
         nav a:hover {
-            color: #111827;
             text-decoration: underline;
             text-underline-offset: 6px;
         }
 
-        /* ===== Hero Section ===== */
         .hero {
             text-align: center;
             padding-top: 120px;
@@ -103,7 +105,6 @@
             background: #374151;
         }
 
-        /* Secondary button style */
         .btn.secondary {
             background: white;
             color: #111827;
@@ -114,7 +115,6 @@
             background: #f3f4f6;
         }
 
-        /* ===== Grid / Cards ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -126,14 +126,16 @@
             padding: 24px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
         .card h3 {
             margin-bottom: 12px;
-        }
-
-        .card p {
-            margin: 0 0 12px;
         }
 
         .tags {
@@ -142,29 +144,21 @@
             margin-bottom: 14px;
         }
 
-        .card a {
-            color: #111827;
-            font-weight: 500;
-        }
-
-        .card a:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
         .link-divider {
             color: #d1d5db;
             margin: 0 8px;
         }
 
-        /* ===== About ===== */
         .about {
             max-width: 850px;
             margin: auto;
-            text-align: center;
         }
 
-        /* ===== Contact ===== */
+        .about p {
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
         .contact {
             text-align: center;
         }
@@ -203,132 +197,77 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-        <h2 style="text-align:center;">Featured Projects</h2>
+        <h2 class="center">Featured Projects</h2>
         <p class="section-subtitle">
-            Quick snapshots of what I’ve built — with links to code, demos, and deeper write-ups.
+            Quick snapshots of what I’ve built — with links to code and demos.
         </p>
 
         <div class="projects-grid">
-
             <div class="card">
                 <h3>Project Title</h3>
                 <p>Short description of what problem you solved and how.</p>
                 <p class="tags">Tags: Python • ML • Evaluation</p>
-                <a href="#" target="_blank" rel="noopener">GitHub →</a>
-                <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Demo →</a>
+                <a href="#">GitHub →</a>
             </div>
-
-            <div class="card">
-                <h3>Project Title</h3>
-                <p>Short description of your machine learning or analytics project.</p>
-                <p class="tags">Tags: SQL • Analytics • Visualization</p>
-                <a href="#" target="_blank" rel="noopener">GitHub →</a>
-                <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Write-up →</a>
-            </div>
-
-            <div class="card">
-                <h3>Project Title</h3>
-                <p>Short description highlighting tools and impact.</p>
-                <p class="tags">Tags: NLP • Modeling • Deployment</p>
-                <a href="#" target="_blank" rel="noopener">GitHub →</a>
-                <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Results →</a>
-            </div>
-
         </div>
     </section>
 
     <!-- CASE STUDIES -->
     <section id="case-studies">
-        <h2 style="text-align:center;">Case Studies</h2>
+        <h2 class="center">Case Studies</h2>
         <p class="section-subtitle">
-            Longer reports and presentations that show my thinking, evaluation, and storytelling.
+            Longer reports and presentations that show my thinking and evaluation.
         </p>
 
         <div class="projects-grid">
-
             <div class="card">
                 <h3>Case Study Title</h3>
-                <p>
-                    1–2 sentence summary of the business problem, your approach, and the outcome.
-                    Mention metrics or impact when possible.
-                </p>
+                <p>1–2 sentence summary of the business problem and outcome.</p>
                 <p class="tags">Tags: Machine Learning • NLP • Metrics</p>
-                <a href="#" target="_blank" rel="noopener">View Slides →</a>
+                <a href="#">View Slides →</a>
                 <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Read Report →</a>
+                <a href="#">Read Report →</a>
             </div>
-
-            <div class="card">
-                <h3>Case Study Title</h3>
-                <p>
-                    1–2 sentence summary of the analysis and key recommendations.
-                </p>
-                <p class="tags">Tags: Analytics • Visualization • Insights</p>
-                <a href="#" target="_blank" rel="noopener">View Slides →</a>
-                <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Read Report →</a>
-            </div>
-
-            <div class="card">
-                <h3>Case Study Title</h3>
-                <p>
-                    1–2 sentence summary of the experiment/model and what you learned.
-                </p>
-                <p class="tags">Tags: Modeling • Evaluation • Deployment</p>
-                <a href="#" target="_blank" rel="noopener">View Slides →</a>
-                <span class="link-divider">|</span>
-                <a href="#" target="_blank" rel="noopener">Read Report →</a>
-            </div>
-
         </div>
     </section>
 
     <!-- ABOUT -->
-<section id="about">
-    <h2 class="center">About Me</h2>
-    <div class="about">
+    <section id="about">
+        <h2 class="center">About Me</h2>
+        <div class="about">
 
-        <p>
-            I’m a data scientist with a background in design and hospitality, trained through the Institute of Data at UNLV.
-            My path into data science has shaped how I approach problems — with technical depth, structured reasoning,
-            and a strong focus on communication.
-        </p>
+            <p>
+                I’m a data scientist with a background in design and hospitality, trained through the Institute of Data at UNLV.
+                My path into data science has shaped how I approach problems — with technical depth, structured reasoning,
+                and a strong focus on communication.
+            </p>
 
-        <p>
-            I’ve built end-to-end machine learning projects spanning exploratory data analysis, feature engineering,
-            model experimentation, and structured evaluation. I’m comfortable working across supervised learning workflows
-            and NLP systems, and I enjoy building complete pipelines — from raw data to deployable tools and visual summaries.
-            I care deeply about understanding <strong>why</strong> a model performs the way it does, not just whether it does.
-        </p>
+            <p>
+                I’ve built end-to-end machine learning projects spanning exploratory data analysis, feature engineering,
+                model experimentation, and structured evaluation. I’m comfortable working across supervised learning workflows
+                and NLP systems, and I enjoy building complete pipelines — from raw data to deployable tools and visual summaries.
+                I care deeply about understanding <strong>why</strong> a model performs the way it does, not just whether it does.
+            </p>
 
-        <p>
-            While I value technical rigor, I consider communication to be my strongest skill. My background in design sharpened
-            my ability to present information visually and structure ideas clearly. My experience in hospitality strengthened
-            my leadership, adaptability, and ability to explain complex concepts to anyone — whether technical or not.
-        </p>
+            <p>
+                While I value technical rigor, I consider communication to be my strongest skill. My background in design sharpened
+                my ability to present information visually and structure ideas clearly. My experience in hospitality strengthened
+                my leadership, adaptability, and ability to explain complex concepts to anyone — whether technical or not.
+            </p>
 
-        <p>
-            I’m naturally curious and iterative in how I work. I enjoy refining models, questioning assumptions,
-            and improving both performance and clarity. For me, data science isn’t just about building models —
-            it’s about building systems that people understand, trust, and use.
-        </p>
+            <p>
+                I’m naturally curious and iterative in how I work. I enjoy refining models, questioning assumptions,
+                and improving both performance and clarity. For me, data science isn’t just about building models —
+                it’s about building systems that people understand, trust, and use.
+            </p>
 
-    </div>
-</section>
-
+        </div>
+    </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
-        <h2>Contact</h2>
+        <h2 class="center">Contact</h2>
         <p>Email: your@email.com</p>
-        <p>
-            <a href="#" target="_blank" rel="noopener">GitHub</a>
-            <span class="link-divider">|</span>
-            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
     </section>
 
     <footer>
