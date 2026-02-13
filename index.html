@@ -30,6 +30,14 @@
             color: inherit;
         }
 
+        /* Small helper text under section titles */
+        .section-subtitle {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #4b5563;
+        }
+
         /* ===== Navbar ===== */
         nav {
             display: flex;
@@ -40,6 +48,7 @@
             position: sticky;
             top: 0;
             border-bottom: 1px solid #e5e7eb;
+            z-index: 10;
         }
 
         nav ul {
@@ -47,10 +56,17 @@
             list-style: none;
             gap: 24px;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
             font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #111827;
+            text-decoration: underline;
+            text-underline-offset: 6px;
         }
 
         /* ===== Hero Section ===== */
@@ -67,7 +83,7 @@
 
         .hero p {
             font-size: 20px;
-            max-width: 600px;
+            max-width: 650px;
             margin: 20px auto;
             color: #4b5563;
         }
@@ -87,7 +103,18 @@
             background: #374151;
         }
 
-        /* ===== Projects ===== */
+        /* Secondary button style */
+        .btn.secondary {
+            background: white;
+            color: #111827;
+            border: 1px solid #e5e7eb;
+        }
+
+        .btn.secondary:hover {
+            background: #f3f4f6;
+        }
+
+        /* ===== Grid / Cards ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -105,9 +132,34 @@
             margin-bottom: 12px;
         }
 
+        .card p {
+            margin: 0 0 12px;
+        }
+
+        .tags {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .card a {
+            color: #111827;
+            font-weight: 500;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .link-divider {
+            color: #d1d5db;
+            margin: 0 8px;
+        }
+
         /* ===== About ===== */
         .about {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
             text-align: center;
         }
@@ -132,6 +184,7 @@
         <strong>Francisco Candelaria</strong>
         <ul>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -145,30 +198,89 @@
             actionable insight — combining technical depth with strong communication.
         </p>
         <a href="#projects" class="btn">View Projects</a>
-        <a href="resume.pdf" class="btn">Download Resume</a>
+        <a href="resume.pdf" class="btn secondary">Download Resume</a>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2 style="text-align:center;">Featured Projects</h2>
+        <p class="section-subtitle">
+            Quick snapshots of what I’ve built — with links to code, demos, and deeper write-ups.
+        </p>
+
         <div class="projects-grid">
-            
+
             <div class="card">
                 <h3>Project Title</h3>
                 <p>Short description of what problem you solved and how.</p>
-                <a href="#">View Case Study →</a>
+                <p class="tags">Tags: Python • ML • Evaluation</p>
+                <a href="#" target="_blank" rel="noopener">GitHub →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Demo →</a>
             </div>
 
             <div class="card">
                 <h3>Project Title</h3>
                 <p>Short description of your machine learning or analytics project.</p>
-                <a href="#">View Case Study →</a>
+                <p class="tags">Tags: SQL • Analytics • Visualization</p>
+                <a href="#" target="_blank" rel="noopener">GitHub →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Write-up →</a>
             </div>
 
             <div class="card">
                 <h3>Project Title</h3>
                 <p>Short description highlighting tools and impact.</p>
-                <a href="#">View Case Study →</a>
+                <p class="tags">Tags: NLP • Modeling • Deployment</p>
+                <a href="#" target="_blank" rel="noopener">GitHub →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Results →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies">
+        <h2 style="text-align:center;">Case Studies</h2>
+        <p class="section-subtitle">
+            Longer reports and presentations that show my thinking, evaluation, and storytelling.
+        </p>
+
+        <div class="projects-grid">
+
+            <div class="card">
+                <h3>Case Study Title</h3>
+                <p>
+                    1–2 sentence summary of the business problem, your approach, and the outcome.
+                    Mention metrics or impact when possible.
+                </p>
+                <p class="tags">Tags: Machine Learning • NLP • Metrics</p>
+                <a href="#" target="_blank" rel="noopener">View Slides →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Read Report →</a>
+            </div>
+
+            <div class="card">
+                <h3>Case Study Title</h3>
+                <p>
+                    1–2 sentence summary of the analysis and key recommendations.
+                </p>
+                <p class="tags">Tags: Analytics • Visualization • Insights</p>
+                <a href="#" target="_blank" rel="noopener">View Slides →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Read Report →</a>
+            </div>
+
+            <div class="card">
+                <h3>Case Study Title</h3>
+                <p>
+                    1–2 sentence summary of the experiment/model and what you learned.
+                </p>
+                <p class="tags">Tags: Modeling • Evaluation • Deployment</p>
+                <a href="#" target="_blank" rel="noopener">View Slides →</a>
+                <span class="link-divider">|</span>
+                <a href="#" target="_blank" rel="noopener">Read Report →</a>
             </div>
 
         </div>
@@ -176,13 +288,13 @@
 
     <!-- ABOUT -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2 style="text-align:center;">About Me</h2>
         <div class="about">
             <p>
-                I’m a data scientist with a background in design and hospitality,
-                trained through the Institute of Data at UNLV. I build end-to-end
-                machine learning solutions and care deeply about both technical
-                rigor and clear communication.
+                I’m a data scientist with a background in design and hospitality, trained through the Institute of Data at UNLV.
+                I build end-to-end machine learning solutions across data preparation, modeling, evaluation, and deployment-ready demos.
+                While I value technical rigor, I consider communication my strongest skill — I’m comfortable explaining complex ideas clearly
+                through both visual storytelling and presentations tailored to any audience.
             </p>
         </div>
     </section>
@@ -192,8 +304,9 @@
         <h2>Contact</h2>
         <p>Email: your@email.com</p>
         <p>
-            <a href="#">GitHub</a> |
-            <a href="#">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+            <span class="link-divider">|</span>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
         </p>
     </section>
 
@@ -203,4 +316,3 @@
 
 </body>
 </html>
-
